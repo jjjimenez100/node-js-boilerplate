@@ -1,0 +1,31 @@
+{
+  "name": "node-js-boilerplate",
+  "version": "1.0.0",
+  "description": "Preset linting and git hooks boilerplate for NodeJS",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "yarn lint && nyc mocha tests",
+    "start": "nodemon src/index.js",
+    "lint": "eslint --fix src/"
+  },
+  "author": "jjjimenez100",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "husky": "^4.3.0",
+    "mocha": "^6.1.4",
+    "nodemon": "^2.0.6",
+    "nyc": "^15.1.0",
+    "sinon": "^9.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test"
+    }
+  }
+}
